@@ -1,14 +1,31 @@
-# 🔬 Automated Optical Defect Detection System
+# Automated Optical Defect Detection System
 
-An AI-powered visual inspection system that classifies industrial components 
+AAn AI-powered visual inspection system that classifies industrial components
 as defective or non-defective using Computer Vision and Machine Learning.
 
-Built as a end-to-end deployable pipeline — from raw image preprocessing 
-to a live web application.
+Built as an end-to-end deployable pipeline — from raw image preprocessing
+to a live web application — with a research focus on **CNN spatial attention
+patterns** and their connection to human visual inspection behaviour.
+
+## Key Research Finding
+
+> The CNN develops **distinct spatial attention strategies per class** —
+> focusing on the lower-center region for defective components and the
+> upper-center region for OK components. This spatial divergence reflects
+> the actual geometry of casting defects in pump impellers.
+>
+> This raises an open research question: **do these machine attention patterns
+> correlate with where a human expert inspector would look at the same images?**
+> If so, human eye-tracking data during inspection could be used to supervise
+> and improve CNN attention — connecting directly to semantic gaze target
+> detection research (Tafasca et al., NeurIPS 2024).
+>
+> See [`notebooks/attention_analysis.ipynb`](notebooks/attention_analysis.ipynb)
+> for the full analysis.
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 This system replicates the core challenge in manufacturing quality control:
 automatically detecting surface defects in industrial components from images,
@@ -20,7 +37,7 @@ The project bridges two domains:
 
 ---
 
-## 📊 Results
+## Results
 
 | Model | Accuracy | ROC-AUC |
 |---|---|---|
@@ -31,7 +48,7 @@ The project bridges two domains:
 
 ---
 
-## 🏗️ Pipeline Architecture
+## Pipeline Architecture
 Raw Images (casting components)
 ↓
 Preprocessing (OpenCV)
@@ -73,7 +90,7 @@ View attention heatmaps + feature analysis
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Python 3.11**
 - **OpenCV** — image preprocessing and contour detection
@@ -85,7 +102,7 @@ View attention heatmaps + feature analysis
 
 ---
 
-## 🚀 Run Locally
+## Run Locally
 
 ### 1. Clone the repo
 ```bash
@@ -141,7 +158,7 @@ optical-defect-detection/
 
 ---
 
-## 🔥 Grad-CAM Visual Attention
+## Grad-CAM Visual Attention
 
 Grad-CAM (Gradient-weighted Class Activation Mapping) visualises which 
 regions of an image the CNN uses to make its classification decision.
@@ -154,5 +171,5 @@ decide it.
 
 ## 👤 Author
 
-**Manish Goud**  
+**Kamareddy Manish Goud**  
 [GitHub](https://github.com/kmanishgoud)
